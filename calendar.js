@@ -1,6 +1,6 @@
 const langJSON = JSON.parse(lang);
 
-let mounth = [];
+let month = [];
 let date1 = new Date();
 
 let summer = document.querySelector('.summer');
@@ -90,13 +90,13 @@ function fWeek2(date, langJSON) {
     return week;
 }
 
-function fMounth2(weeksQ, dateS) {
+function fMonth2(weeksQ, dateS) {
     let dateInMs = dateS.getTime();
-    let moun = dateS.getMonth();
+    let mon = dateS.getMonth();
     let firstDay;
 
     function pre(d, m) {
-        if (m != moun) {
+        if (m != mon) {
             console.log(new Date(d));
             return d;
         }
@@ -106,27 +106,26 @@ function fMounth2(weeksQ, dateS) {
     }
 
     if (!firstDay) {
-        let firstDayInMs = pre(dateInMs, moun);
+        let firstDayInMs = pre(dateInMs, mon);
         firstDay = new Date(firstDayInMs);
         console.log(firstDay);
     }
 
-    let mounth = [];
+    let month = [];
     let currentDay = firstDay;
 
     for (let i = weeksQ; i > 0; i--) {
         let week = fWeek2(currentDay, langJSON);
-        mounth.push(week);
+        month.push(week);
         currentDay = currentDay.getTime();
         currentDay += 7 * (1000 * 60 * 60 * 24);
         currentDay = new Date(currentDay);
         console.log(currentDay);
     }
 
-    return mounth;
+    return month;
 }
 
 
-buildTable2(fMounth2(5, new Date()), 'summer');
-
+buildTable2(fMonth2(5, new Date()), 'summer');
 
