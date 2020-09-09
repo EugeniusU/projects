@@ -1,0 +1,25 @@
+
+html {
+    background: aliceblue;
+    font-size: 16px;
+    font-family: Georgia, sans-serif;
+    color: forestgreen;
+}
+
+.settings {
+    margin: 10px;
+    padding: 5px;
+    width: 10%;
+    height: 5%;
+    background: orchid;
+    color: whitesmoke;
+    border: 1px solid lightseagreen;
+}
+
+.title {
+    padding: 5px;
+}
+
+.content {
+    margin: 10px;
+}
