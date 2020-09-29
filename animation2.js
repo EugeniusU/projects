@@ -1,6 +1,5 @@
 
 let colors = ['green', 'yellow', 'pink', 'magenta', 'purple', 'deeppink', 'mistyrose', 'springgreen', 'aliceblue', 'indigo'];
-//             'purple', 'deeppink', 'mistyrose', 'springgreen', 'aliceblue', 'indigo'];
 
 function random(n, s) {
     if (s) {
@@ -39,7 +38,6 @@ function position(center, radius) {
         } else {
             pos.y = random(center.y, -radius);
         }
-//        return pos;
     } else {
         pos.x = random(center.x, -radius);
         if (Math.random() < 0.5) {
@@ -47,29 +45,7 @@ function position(center, radius) {
         } else {
             pos.y = random(center.y, radius);
         }
-//        return pos;
     }
-/*
-    if (typeof radius == 'object') {
-        if (Math.random() > 0.5) {
-            pos.x = random(center.x, radius.x);
-            if (Math.random() > 0.5) {
-                pos.y = random(center.y, radius.y);
-            } else {
-                pos.y = random(center.y, -radius);
-            }
-//        return pos;
-        } else {
-            pos.x = random(center.x, -radius);
-            if (Math.random() < 0.5) {
-                pos.y = random(center.y, -radius);
-            } else {
-                pos.y = random(center.y, radius);
-            }
-//        return pos;
-        }
-    }
-*/
     return pos;
 }
 
@@ -77,16 +53,7 @@ let c = new Vector(100, 100);
 
 console.log(position(c, 100));
 console.log(position(c, 100));
-/*
-let i = 0;
-let int = setInterval(function() {
-    if (i == 20) {
-        clearInterval(int);
-    }
-    console.log(position(c, 100));
-    i++;
-});
-*/
+
 let canvas = document.querySelector('canvas').getContext('2d');
 console.log(canvas);
 
@@ -113,57 +80,28 @@ function draw(vector, radius, width, height) {
     canvas.moveTo(pos.x, pos.y);
     canvas.lineTo(pos.x + width, pos.y + height);
 
-//    canvas.closePath();
     canvas.stroke();
 }
-
-//draw(c, 100, 20, 20);
-/*
-let i = 0;
-let int = setInterval(function() {
-    if (i == 200) {
-        clearInterval(int);
-    }
-//    console.log(position(c, 100));
-    draw(c, 100, 20, 20);
-    i++;
-}, 30);
-*/
 
 let vectors = [];
 
 function draw2(vector, radius, object) {
     let pos, color;
     if (object) {
-//        let pos = object.pos;
-//        let color = object.color;
         pos = object.pos;
         color = object.color;
-//        console.log(1);
     } else {
-
-//        let pos = position(vector, radius);
-//        let color = random(colors.length);
         pos = position(vector, radius);
         color = random(colors.length);
 
         let obj = {pos: pos, color: color};
         vectors.push(obj);
-//        console.log(2);
-//        console.log(color);
     }
-//    console.log(color);
-//    let obj = {pos: pos, color: color};
-//    vectors.push(obj);
 
     canvas.beginPath();
     canvas.strokeStyle = colors[color];
     canvas.lineWidth = 10;
-//    canvas.moveTo(pos.x, pos.y);
-//    canvas.lineTo(pos.x + width, pos.y + height);
-///    canvas.arc(pos.x, pos.y, radius, 0, 7);
     canvas.arc(pos.x, pos.y, 5, 0, 7);
-//    canvas.closePath();
     canvas.stroke();
 }
 
@@ -179,17 +117,13 @@ function animate(time) {
         start = time;
     }
     let progress = time - start;
-//    draw(c, 100, 20, 20);
-//    draw(c2, 50, 3, 3);
     draw2(c2, 5);
-//    draw2(c2, 100);
     requestAnimationFrame(animate);
     if (i == 100) {
         canvas.fillStyle = 'white';
         canvas.fillRect(0, 0, pl.width, pl.height);
         console.log(vectors);
         j++;
-//        let v2 = vectors.slice(j);
         let v2 = vectors.slice(vectors.length - 50);
         console.log(v2);
         vectors = [];
@@ -201,7 +135,7 @@ function animate(time) {
     i++;
 }
 
-//requestAnimationFrame(animate);
+requestAnimationFrame(animate);
 
 
 //console.log(performance.now());
