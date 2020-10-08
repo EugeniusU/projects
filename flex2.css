@@ -1,0 +1,56 @@
+.settings {
+    display: flex;
+    justify-content: flex-start;
+    margin: auto;
+
+
+//    border: 3px solid magenta;
+}
+
+.one, .two {
+    margin: 5%;
+    width: 200px;
+    height: 100px;
+    min-width: 100px;
+//    top: 15%;
+}
+
+.one {
+    border: 1px solid green;
+}
+
+.two {
+    border: 1px solid purple;
+}
+
+.all {
+    display: flex;
+    justify-content: space-around;
+}
+
+.ones {
+    width: 200px;
+    height: 100px;
+    border: 1px solid limegreen;
+}
+
+.twos {
+    width: 200px;
+    height: 100px;
+    border: 1px solid mediumpurple;
+}
+
+.message {
+//    padding: 10px;
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    border: 1px solid deeppink;
+    top: 30%;
+    left: 30%;
+    text-align: center;
+//    text-align: justify;
+    font-family: "Comic Sans MS";
+    font-size: 20px;
+    color: forestgreen;
+}
