@@ -1,0 +1,45 @@
+
+.list {
+	margin: 30px;
+}
+
+.list div {
+	display: flex;
+	margin: 5px;
+	color: rgba(0, 0, 0, 0);
+}
+
+.list span {
+	font-size: 25px;
+	border: 1px solid purple;
+	background: deeppink;
+	width: 30px;
+	height: 30px;
+	padding: 10px;
+	text-align: center;
+}
+
+.letters {
+	margin: 30px;
+}
+
+.letters span {
+	font-size: 35px;
+	border: 1px solid deeppink;
+	margin: 5px;
+	padding: 10px 20px;
+	color: white;
+	background: magenta;
+}
+
+button {
+	margin: 30px;
+}
+
+.point {
+	position: absolute;
+	top: 10%;
+	left: 80%;
+	font-size: 30px;
+	color: gold;
+}
